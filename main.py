@@ -283,6 +283,7 @@ class App:
         while i < 100:
             print(i + " ")
             i += 1
+            machine.sleep(2000)
 
 
 def download_and_install_update_if_available():
@@ -293,7 +294,6 @@ def download_and_install_update_if_available():
 def start():
     app = App()
     app.run()
-    download_and_install_update_if_available()
 
 
 # your custom code goes here. Something like this: ...
