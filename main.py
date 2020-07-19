@@ -281,7 +281,7 @@ class App:
     def run(self):
         i = 0
         while i < 100:
-            print(i + " ")
+            print(i)
             i += 1
             machine.sleep(2000)
 
