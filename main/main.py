@@ -3,6 +3,7 @@ import os
 
 import machine
 import usocket
+from machine import Pin
 
 
 # from ota_updater import OTAUpdater
@@ -283,7 +284,11 @@ class App:
         while i < 100:
             print(i)
             i += 1
+            p0 = Pin(2, Pin.OUT)
+            p0.on()
+            p0.off()
             machine.sleep(2000)
+            p0.value(0)
 
 
 def download_and_install_update_if_available():
