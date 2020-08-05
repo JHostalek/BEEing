@@ -1,5 +1,0 @@
-C:/Users/janho/ownCloud/other/BEEing PlatformIO/8266/cmake-build-esp01_1m-mingw/CMakeFiles/Production.dir
-C:/Users/janho/ownCloud/other/BEEing PlatformIO/8266/cmake-build-esp01_1m-mingw/CMakeFiles/edit_cache.dir
-C:/Users/janho/ownCloud/other/BEEing PlatformIO/8266/cmake-build-esp01_1m-mingw/CMakeFiles/Debug.dir
-C:/Users/janho/ownCloud/other/BEEing PlatformIO/8266/cmake-build-esp01_1m-mingw/CMakeFiles/Z_DUMMY_TARGET.dir
-C:/Users/janho/ownCloud/other/BEEing PlatformIO/8266/cmake-build-esp01_1m-mingw/CMakeFiles/rebuild_cache.dir
