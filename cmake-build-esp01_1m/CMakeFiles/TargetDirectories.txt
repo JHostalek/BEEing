@@ -1,0 +1,5 @@
+D:/ownCloud/other/BEEing PlatformIO/esp8266/cmake-build-esp01_1m/CMakeFiles/Production.dir
+D:/ownCloud/other/BEEing PlatformIO/esp8266/cmake-build-esp01_1m/CMakeFiles/edit_cache.dir
+D:/ownCloud/other/BEEing PlatformIO/esp8266/cmake-build-esp01_1m/CMakeFiles/Debug.dir
+D:/ownCloud/other/BEEing PlatformIO/esp8266/cmake-build-esp01_1m/CMakeFiles/Z_DUMMY_TARGET.dir
+D:/ownCloud/other/BEEing PlatformIO/esp8266/cmake-build-esp01_1m/CMakeFiles/rebuild_cache.dir

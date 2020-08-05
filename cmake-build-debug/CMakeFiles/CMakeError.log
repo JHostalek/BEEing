@@ -1,0 +1,64 @@
+Detecting C compiler ABI info failed to compile with the following output:
+Change Dir: C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):nmake /nologo cmTC_e58a6\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\bin\HostX86\x86\nmake.exe" -f CMakeFiles\cmTC_e58a6.dir\build.make /nologo -L                  CMakeFiles\cmTC_e58a6.dir\build
+Building C object CMakeFiles/cmTC_e58a6.dir/CMakeCCompilerABI.c.obj
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe    -o CMakeFiles\cmTC_e58a6.dir\CMakeCCompilerABI.c.obj   -c C:\Users\janho\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\201.7846.88\bin\cmake\win\share\cmake-3.16\Modules\CMakeCCompilerABI.c
+Optimalizující kompilátor C/C++ společnosti Microsoft (R) verze 19.26.28806 pro procesory x86
+Copyright (C) Microsoft Corporation. Všechna práva vyhrazena.
+
+cl: příkazový řádek warning D9035 : Možnost o je zastaralá a v příští verzi se odebere.
+CMakeCCompilerABI.c
+Linking C executable cmTC_e58a6
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe      "CMakeFiles\cmTC_e58a6.dir\CMakeCCompilerABI.c.obj"   -o cmTC_e58a6
+Optimalizující kompilátor C/C++ společnosti Microsoft (R) verze 19.26.28806 pro procesory x86
+Copyright (C) Microsoft Corporation. Všechna práva vyhrazena.
+
+cl: příkazový řádek warning D9035 : Možnost o je zastaralá a v příští verzi se odebere.
+Microsoft (R) Incremental Linker Version 14.26.28806.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+/out:CMakeCCompilerABI.c.exe 
+/out:cmTC_e58a6.exe 
+CMakeFiles\cmTC_e58a6.dir\CMakeCCompilerABI.c.obj 
+LINK : fatal error LNK1181: Vstupní soubor CMakeFiles\cmTC_e58a6.dir\CMakeCCompilerABI.c.obj se nedá otevřít.
+NMAKE : fatal error U1077: C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe: Nßvratovř kˇd 0x2
+Stop.
+NMAKE : fatal error U1077: "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\bin\HostX86\x86\nmake.exe": Nßvratovř kˇd 0x2
+Stop.
+
+
+
+
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):nmake /nologo cmTC_be5f4\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\bin\HostX86\x86\nmake.exe" -f CMakeFiles\cmTC_be5f4.dir\build.make /nologo -L                  CMakeFiles\cmTC_be5f4.dir\build
+Building CXX object CMakeFiles/cmTC_be5f4.dir/CMakeCXXCompilerABI.cpp.obj
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe     -o CMakeFiles\cmTC_be5f4.dir\CMakeCXXCompilerABI.cpp.obj -c C:\Users\janho\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\201.7846.88\bin\cmake\win\share\cmake-3.16\Modules\CMakeCXXCompilerABI.cpp
+Optimalizující kompilátor C/C++ společnosti Microsoft (R) verze 19.26.28806 pro procesory x86
+Copyright (C) Microsoft Corporation. Všechna práva vyhrazena.
+
+cl: příkazový řádek warning D9035 : Možnost o je zastaralá a v příští verzi se odebere.
+CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_be5f4
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe       "CMakeFiles\cmTC_be5f4.dir\CMakeCXXCompilerABI.cpp.obj"   -o cmTC_be5f4
+Optimalizující kompilátor C/C++ společnosti Microsoft (R) verze 19.26.28806 pro procesory x86
+Copyright (C) Microsoft Corporation. Všechna práva vyhrazena.
+
+cl: příkazový řádek warning D9035 : Možnost o je zastaralá a v příští verzi se odebere.
+Microsoft (R) Incremental Linker Version 14.26.28806.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+/out:CMakeCXXCompilerABI.cpp.exe 
+/out:cmTC_be5f4.exe 
+CMakeFiles\cmTC_be5f4.dir\CMakeCXXCompilerABI.cpp.obj 
+LINK : fatal error LNK1181: Vstupní soubor CMakeFiles\cmTC_be5f4.dir\CMakeCXXCompilerABI.cpp.obj se nedá otevřít.
+NMAKE : fatal error U1077: C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe: Nßvratovř kˇd 0x2
+Stop.
+NMAKE : fatal error U1077: "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\bin\HostX86\x86\nmake.exe": Nßvratovř kˇd 0x2
+Stop.
+
+
+
+

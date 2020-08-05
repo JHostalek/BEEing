@@ -1,0 +1,18 @@
+C:\Users\janho\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\201.7846.88\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - NMake Makefiles" "C:\Users\janho\ownCloud\other\BEEing PlatformIO\esp8266"
+-- The C compiler identification is MSVC 19.26.28806.0
+-- The CXX compiler identification is MSVC 19.26.28806.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - failed
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - failed
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/cmake-build-debug
+
+Cannot get compiler information:
+	Cannot run program "C:\Users\janho\.platformio\packages\toolchain-xtensa\bin\xtensa-lx106-elf-g++.exe" (in directory "C:\Users\janho\ownCloud\other\BEEing PlatformIO\esp8266\cmake-build-debug"): CreateProcess error=2, Systém nemůže nalézt uvedený soubor
+	Cannot run program "C:\Users\janho\.platformio\packages\toolchain-xtensa\bin\xtensa-lx106-elf-gcc.exe" (in directory "C:\Users\janho\ownCloud\other\BEEing PlatformIO\esp8266\cmake-build-debug"): CreateProcess error=2, Systém nemůže nalézt uvedený soubor

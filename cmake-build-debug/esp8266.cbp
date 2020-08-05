@@ -1,0 +1,1290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="esp8266"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="msvc8"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f &quot;C:\Users\janho\ownCloud\other\BEEing PlatformIO\esp8266\cmake-build-debug\Makefile&quot; VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\janho\ownCloud\other\BEEing PlatformIO\esp8266\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;C:\Users\janho\ownCloud\other\BEEing PlatformIO\esp8266\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\janho\ownCloud\other\BEEing PlatformIO\esp8266\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Production">
+				<Option working_dir="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f &quot;C:\Users\janho\ownCloud\other\BEEing PlatformIO\esp8266\cmake-build-debug\Makefile&quot; VERBOSE=1 Production"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\janho\ownCloud\other\BEEing PlatformIO\esp8266\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;C:\Users\janho\ownCloud\other\BEEing PlatformIO\esp8266\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\janho\ownCloud\other\BEEing PlatformIO\esp8266\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f &quot;C:\Users\janho\ownCloud\other\BEEing PlatformIO\esp8266\cmake-build-debug\Makefile&quot; VERBOSE=1 edit_cache"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\janho\ownCloud\other\BEEing PlatformIO\esp8266\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;C:\Users\janho\ownCloud\other\BEEing PlatformIO\esp8266\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\janho\ownCloud\other\BEEing PlatformIO\esp8266\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Debug">
+				<Option working_dir="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f &quot;C:\Users\janho\ownCloud\other\BEEing PlatformIO\esp8266\cmake-build-debug\Makefile&quot; VERBOSE=1 Debug"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\janho\ownCloud\other\BEEing PlatformIO\esp8266\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;C:\Users\janho\ownCloud\other\BEEing PlatformIO\esp8266\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\janho\ownCloud\other\BEEing PlatformIO\esp8266\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Z_DUMMY_TARGET">
+				<Option output="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/cmake-build-debug/Z_DUMMY_TARGET" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f &quot;C:\Users\janho\ownCloud\other\BEEing PlatformIO\esp8266\cmake-build-debug\Makefile&quot; VERBOSE=1 Z_DUMMY_TARGET"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\janho\ownCloud\other\BEEing PlatformIO\esp8266\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;C:\Users\janho\ownCloud\other\BEEing PlatformIO\esp8266\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\janho\ownCloud\other\BEEing PlatformIO\esp8266\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Z_DUMMY_TARGET/fast">
+				<Option output="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/cmake-build-debug/Z_DUMMY_TARGET" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f &quot;C:\Users\janho\ownCloud\other\BEEing PlatformIO\esp8266\cmake-build-debug\Makefile&quot; VERBOSE=1 Z_DUMMY_TARGET/fast"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\janho\ownCloud\other\BEEing PlatformIO\esp8266\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;C:\Users\janho\ownCloud\other\BEEing PlatformIO\esp8266\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\janho\ownCloud\other\BEEing PlatformIO\esp8266\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f &quot;C:\Users\janho\ownCloud\other\BEEing PlatformIO\esp8266\cmake-build-debug\Makefile&quot; VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\janho\ownCloud\other\BEEing PlatformIO\esp8266\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;C:\Users\janho\ownCloud\other\BEEing PlatformIO\esp8266\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\janho\ownCloud\other\BEEing PlatformIO\esp8266\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/ESP-01_AT_Commands_Hardware_Serial_Hookup.pdf">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/ESP-01_AT_Commands_SoftSerial_Hookup.pdf">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/README.md">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoEthernet/ReadField/ReadField.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoEthernet/ReadField/secrets.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoEthernet/WriteMultipleFields/WriteMultipleFields.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoEthernet/WriteMultipleFields/secrets.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoEthernet/WriteSingleField/WriteSingleField.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoEthernet/WriteSingleField/secrets.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoMKR1000/ReadField/ReadField.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoMKR1000/ReadField/secrets.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoMKR1000/WriteMultipleFields/WriteMultipleFields.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoMKR1000/WriteMultipleFields/secrets.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoMKR1000/WriteSingleField/WriteSingleField.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoMKR1000/WriteSingleField/secrets.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoMKRETHShield/ReadField/ReadField.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoMKRETHShield/ReadField/secrets.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoMKRETHShield/WriteMultipleFields/WriteMultipleFields.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoMKRETHShield/WriteMultipleFields/secrets.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoMKRETHShield/WriteSingleField/WriteSingleField.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoMKRETHShield/WriteSingleField/secrets.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoMKRGSM1400/ReadField/ReadField.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoMKRGSM1400/ReadField/secrets.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoMKRGSM1400/WriteMultipleFields/WriteMultipleFields.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoMKRGSM1400/WriteMultipleFields/secrets.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoMKRGSM1400/WriteSingleField/WriteSingleField.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoMKRGSM1400/WriteSingleField/secrets.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoMKRVIDOR4000/ReadField/ReadField.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoMKRVIDOR4000/ReadField/secrets.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoMKRVIDOR4000/WriteMultipleFields/WriteMultipleFields.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoMKRVIDOR4000/WriteMultipleFields/secrets.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoMKRVIDOR4000/WriteSingleField/WriteSingleField.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoMKRVIDOR4000/WriteSingleField/secrets.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoMKRWiFi1010/ReadField/ReadField.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoMKRWiFi1010/ReadField/secrets.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoMKRWiFi1010/WriteMultipleFields/WriteMultipleFields.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoMKRWiFi1010/WriteMultipleFields/secrets.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoMKRWiFi1010/WriteSingleField/WriteSingleField.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoMKRWiFi1010/WriteSingleField/secrets.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoUnoWiFi Rev2/ReadField/ReadField.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoUnoWiFi Rev2/ReadField/secrets.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoUnoWiFi Rev2/WriteMultipleFields/WriteMultipleFields.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoUnoWiFi Rev2/WriteMultipleFields/secrets.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoUnoWiFi Rev2/WriteSingleField/WriteSingleField.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoUnoWiFi Rev2/WriteSingleField/secrets.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoWiFiShield/ReadField/ReadField.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoWiFiShield/ReadField/secrets.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoWiFiShield/WriteMultipleFields/WriteMultipleFields.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoWiFiShield/WriteMultipleFields/secrets.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoWiFiShield/WriteSingleField/WriteSingleField.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoWiFiShield/WriteSingleField/secrets.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoWiFiShield101/ReadField/ReadField.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoWiFiShield101/ReadField/secrets.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoWiFiShield101/WriteMultipleFields/WriteMultipleFields.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoWiFiShield101/WriteMultipleFields/secrets.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoWiFiShield101/WriteSingleField/WriteSingleField.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoWiFiShield101/WriteSingleField/secrets.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoYun/ReadField/ReadField.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoYun/ReadField/secrets.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoYun/WriteMultipleFields/WriteMultipleFields.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoYun/WriteMultipleFields/secrets.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoYun/WriteSingleField/WriteSingleField.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ArduinoYun/WriteSingleField/secrets.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ESP32/ReadField/ReadField.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ESP32/ReadField/secrets.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ESP32/WriteMultipleFields/WriteMultipleFields.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ESP32/WriteMultipleFields/secrets.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ESP32/WriteSingleField/WriteSingleField.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ESP32/WriteSingleField/secrets.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ESP8266/program board directly/ReadField/ReadField.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ESP8266/program board directly/ReadField/secrets.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ESP8266/program board directly/WriteMultipleFields/WriteMultipleFields.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ESP8266/program board directly/WriteMultipleFields/secrets.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ESP8266/program board directly/WriteSingleField/WriteSingleField.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ESP8266/program board directly/WriteSingleField/secrets.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ESP8266/via AT commands/ReadField/ReadField.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ESP8266/via AT commands/ReadField/secrets.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ESP8266/via AT commands/WriteMultipleFields/WriteMultipleFields.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ESP8266/via AT commands/WriteMultipleFields/secrets.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ESP8266/via AT commands/WriteSingleField/WriteSingleField.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/examples/ESP8266/via AT commands/WriteSingleField/secrets.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/extras/test/testBegin/testBegin.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/extras/test/testReadField/testReadField.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/extras/test/testSetField/testSetField.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/extras/test/testWriteField/testWriteField.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/keywords.txt">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/library.properties">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/license.md">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/src/ThingSpeak.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/ThingSpeak-1.5.0/src/ThingSpeak.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/README.adoc">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/examples/ConnectNoEncryption/ConnectNoEncryption.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/examples/ConnectWithWEP/ConnectWithWEP.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/examples/ConnectWithWPA/ConnectWithWPA.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/examples/ScanNetworks/ScanNetworks.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/examples/SimpleWebServerWiFi/SimpleWebServerWiFi.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/examples/WiFiChatServer/WiFiChatServer.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/examples/WiFiUdpNtpClient/WiFiUdpNtpClient.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/examples/WiFiUdpSendReceiveString/WiFiUdpSendReceiveString.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/examples/WiFiWebClient/WiFiWebClient.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/examples/WiFiWebClientRepeating/WiFiWebClientRepeating.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/examples/WiFiWebServer/WiFiWebServer.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/binary/wifiHD.elf">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/binary/wifiHD.hex">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/binary/wifiHD_2_1.elf">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/binary/wifi_dnld.elf">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/binary/wifi_dnld.hex">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/binary/wifi_dnld_2_1.elf">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/scripts/ArduinoWifiShield_upgrade.sh">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/Release/wifiHD.elf">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/Release/wifiHD.hex">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/CONFIG/conf_access.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/CONFIG/conf_at45dbx.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/CONFIG/conf_ebi.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/CONFIG/conf_sd_mmc_spi.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/ASM/trampoline.x">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/BOARDS/ARDUINO/arduino.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/BOARDS/ARDUINO/led.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/BOARDS/ARDUINO/led.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/BOARDS/EVK1105/evk1105.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/BOARDS/EVK1105/led.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/BOARDS/EVK1105/led.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/BOARDS/board.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/BOARDS/board.h.my">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX/at45dbx.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX/at45dbx.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX/at45dbx_mem.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX/at45dbx_mem.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/v2.7.0/UCR1/GCC/lib_ucr1_hd_sdio_v2.7.0.a">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/v2.7.0/UCR1/GCC/lib_ucr1_hd_spi_v2.7.0.a">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/v2.7.0/UCR1/GCC/lib_ucr1_hd_wl_sta_intwpa_v2.7.0.a">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/v2.7.0/UCR2/GCC/lib_ucr2_hd_sdio_v2.7.0.a">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/v2.7.0/UCR2/GCC/lib_ucr2_hd_spi_v2.7.0.a">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/v2.7.0/UCR2/GCC/lib_ucr2_hd_wl_sta_intwpa_v2.7.0.a">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/v2.7.0/revision.txt">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/wl_api.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/wl_fw.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/wl_os.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/wl_sdio.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/wl_spi.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD/wlap_api.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/CPU/CYCLE_COUNTER/cycle_counter.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/EBI/SMC/smc.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/EBI/SMC/smc.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/EIC/eic.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/EIC/eic.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/FLASHC/flashc.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/FLASHC/flashc.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/GPIO/gpio.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/GPIO/gpio.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/INTC/exception.x">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/INTC/intc.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/INTC/intc.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/PDCA/pdca.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/PDCA/pdca.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/pm.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/pm.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/pm_conf_clocks.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/power_clocks_lib.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/power_clocks_lib.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/RTC/rtc.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/RTC/rtc.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/SPI/spi.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/SPI/spi.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/TC/tc.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/TC/tc.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/USART/usart.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/USART/usart.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/DELAY/delay.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/DELAY/delay.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/dhcp.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/dns.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/init.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/autoip.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/icmp.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/igmp.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/inet.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/inet_chksum.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/ip.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/ip_addr.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/ip_frag.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/mem.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/memp.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/netif.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/pbuf.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/raw.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/stats.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/tcp.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/tcp_in.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/tcp_out.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/udp.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/ipv4/lwip/autoip.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/ipv4/lwip/icmp.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/ipv4/lwip/igmp.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/ipv4/lwip/inet.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/ipv4/lwip/inet_chksum.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/ipv4/lwip/ip.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/ipv4/lwip/ip_addr.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/ipv4/lwip/ip_frag.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/api.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/api_msg.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/arch.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/debug.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/def.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/dhcp.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/dns.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/err.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/init.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/mem.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/memp.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/memp_std.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/netbuf.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/netdb.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/netif.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/netifapi.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/opt.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/pbuf.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/raw.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/sio.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/snmp.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/snmp_asn1.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/snmp_msg.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/snmp_structs.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/sockets.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/stats.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/sys.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/tcp.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/tcpip.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip/udp.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/netif/etharp.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/netif/loopif.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/netif/ppp_oe.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/netif/slipif.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/netif/etharp.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/netif/loopif.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-port-1.3.2/HD/if/include/arch/cc.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-port-1.3.2/HD/if/include/arch/perf.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-port-1.3.2/HD/if/include/lwipopts.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-port-1.3.2/HD/if/include/netif/wlif.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-port-1.3.2/HD/if/netif/wlif.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-port-1.3.2/HD/readme.txt">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/MEMORY/CTRL_ACCESS/ctrl_access.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/MEMORY/CTRL_ACCESS/ctrl_access.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG/debug.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG/debug.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG/print_funcs.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG/print_funcs.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/INCLUDE/nlao_cpu.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/INCLUDE/nlao_exceptions.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/INCLUDE/nlao_interrupts.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/INCLUDE/nlao_io.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/INCLUDE/nlao_usart.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/libnewlib_addons-at32ucr2-speed_opt.a">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/LINKER_SCRIPTS/AT32UC3A/0512/GCC/link_uc3a0512.lds">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/LINKER_SCRIPTS/AT32UC3A/1256/GCC/link_uc3a1256.lds">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/PREPROCESSOR/mrepeat.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/PREPROCESSOR/preprocessor.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/PREPROCESSOR/stringz.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/PREPROCESSOR/tpaste.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/STARTUP_FILES/GCC/crt0.x">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/compiler.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/conf_isp.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/parts.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/ard_spi.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/ard_spi.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/ard_tcp.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/ard_tcp.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/ard_utils.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/ard_utils.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/avr32_spi.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/board_init.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/board_init.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/cmd_wl.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/cmd_wl.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/console.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/console.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/debug.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/fw_download.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/fw_download_extflash.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/license.txt">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/lwip_setup.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/lwip_setup.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/lwipopts.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/main.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/nvram.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/nvram.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/owl_os.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/ping.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/ping.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/printf-stdarg.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/printf-stdarg.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/timer.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/timer.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/top_defs.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/trace.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/util.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/util.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/wifi_spi.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/wl_cm.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/wl_cm.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/src/wl_definitions.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifiHD/wifiHD.cproj">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/Release/wifi_dnld.elf">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/CONFIG/conf_access.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/CONFIG/conf_at45dbx.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/Doc/SPB104 product brief.pdf">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/Doc/gettingstarted.pdf">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/ASM/trampoline.x">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/BOARDS/ARDUINO/arduino.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/BOARDS/ARDUINO/led.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/BOARDS/ARDUINO/led.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/BOARDS/EVK1105/evk1105.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/BOARDS/EVK1105/led.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/BOARDS/EVK1105/led.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/BOARDS/board.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/BOARDS/board.h.ori">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX/at45dbx.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX/at45dbx.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX/at45dbx_mem.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX/at45dbx_mem.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/FLASHC/flashc.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/FLASHC/flashc.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/GPIO/gpio.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/GPIO/gpio.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/INTC/exception.x">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/INTC/intc.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/INTC/intc.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/pm.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/pm.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/pm_conf_clocks.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/power_clocks_lib.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/power_clocks_lib.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/SPI/spi.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/SPI/spi.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/USART/usart.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/USART/usart.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/SERVICES/MEMORY/CTRL_ACCESS/ctrl_access.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/SERVICES/MEMORY/CTRL_ACCESS/ctrl_access.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG/debug.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG/debug.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG/print_funcs.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG/print_funcs.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/INCLUDE/nlao_cpu.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/INCLUDE/nlao_exceptions.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/INCLUDE/nlao_interrupts.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/INCLUDE/nlao_io.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/INCLUDE/nlao_usart.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/libnewlib_addons-at32ucr2-speed_opt.a">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/LINKER_SCRIPTS/AT32UC3A/0512/GCC/link_uc3a0512.lds">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/LINKER_SCRIPTS/AT32UC3A/1256/GCC/link_uc3a1256.lds">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/PREPROCESSOR/mrepeat.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/PREPROCESSOR/preprocessor.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/PREPROCESSOR/stringz.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/PREPROCESSOR/tpaste.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/STARTUP_FILES/GCC/crt0.x">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/compiler.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/conf_isp.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/parts.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/clocks.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/clocks.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/flash_fw.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/license.txt">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/nor_flash.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/nor_flash.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/printf-stdarg.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/printf-stdarg.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/startup.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/startup.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/src/wl_fw.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifi_dnld/wifi_dnld.cproj">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/extras/wifishield.atsln">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/keywords.txt">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/library.properties">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/src/WiFi.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/src/WiFi.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/src/WiFiClient.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/src/WiFiClient.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/src/WiFiServer.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/src/WiFiServer.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/src/WiFiUdp.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/src/WiFiUdp.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/src/utility/debug.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/src/utility/server_drv.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/src/utility/server_drv.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/src/utility/spi_drv.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/src/utility/spi_drv.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/src/utility/wifi_drv.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/src/utility/wifi_drv.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/src/utility/wifi_spi.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/src/utility/wl_definitions.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/lib/WiFi-master/src/utility/wl_types.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/src/main.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="C:/Users/janho/ownCloud/other/BEEing PlatformIO/esp8266/CMakeListsPrivate.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
