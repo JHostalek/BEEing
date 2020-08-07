@@ -1,18 +1,17 @@
 #include "Adafruit_BMP280.h"
-#include "Adafruit_Sensor.h"
 #include <Arduino.h>
 #include <Wire.h>
 #include "arduinoFFT.h"
 #include "WiFi.h"
 #include "esp_now.h"
-#include <esp_now.h>
-#include "I2Cdev.h"
 #include "MPU6050.h"
 
 #include <driver/adc.h>
 #include <esp_wifi.h>
 
-
+/**
+ * MPU is GYROSKOPE and ACCELEROMETER device
+ */
 MPU6050 mpu;
 int16_t ax, ay, az;
 int16_t gx, gy, gz;
@@ -20,9 +19,15 @@ int16_t gx, gy, gz;
 // Global copy of slave
 esp_now_peer_info_t slave;
 #define CHANNEL 1
+
+//if true, prints wifi scan results - aka ssids of near networks
 #define PRINTSCANRESULTS 1
+//if true, deletes last used peer
 #define DELETEBEFOREPAIR 1
 
+#define MICROPHONE_PIN 34
+
+//same data structure as masters's - used for ESPNow data transfer
 typedef struct DataStruct {
     float Audio;
     float Tmp1;
@@ -36,9 +41,14 @@ typedef struct DataStruct {
 } DataStruct __attribute__((packed));
 DataStruct dataStruct;
 
-
+/**
+ * TEMPERATURE sensor
+ */
 Adafruit_BMP280 bmp;  // I2C
 
+/**
+ * AUDIO SAMPLING VALUES
+ */
 arduinoFFT FFT = arduinoFFT();
 #define SAMPLES 512               // Must be a power of 2
 #define SAMPLING_FREQUENCY 40000  // Hz, must be 40000 or less due to ADC conversion time. Determines \
@@ -51,16 +61,21 @@ byte peak[] = {0, 0, 0, 0, 0, 0, 0};
 double vReal[SAMPLES];
 double vImag[SAMPLES];
 
+//used for timing
 unsigned long audioNewTime = 0;
 unsigned long audioOldTime = 0;
 
+//used for timing in loop(){}
 unsigned long oldTime = 0;
 unsigned int iterations = 1;
 float audioSum = 0;
 int tempSum = 0;
 int audioIterations;
 
-// Init ESP Now with fallback
+
+/**
+ * Init ESP Now with fallback
+ */
 void InitESPNow() {
     //WiFi.disconnect();
     if (esp_now_init() == ESP_OK) {
@@ -75,7 +90,9 @@ void InitESPNow() {
     }
 }
 
-// Scan for slaves in AP mode
+/**
+ * Scan for slaves in AP mode
+ */
 void ScanForSlave() {
     int8_t scanResults = WiFi.scanNetworks();
     // reset on each scan
@@ -136,6 +153,9 @@ void ScanForSlave() {
     // clean up ram
     WiFi.scanDelete();
 }
+/**
+ * deletes last peer
+ */
 void deletePeer() {
     esp_err_t delStatus = esp_now_del_peer(slave.peer_addr);
     Serial.print("Slave Delete Status: ");
@@ -153,14 +173,17 @@ void deletePeer() {
         Serial.println("Not sure what happened");
     }
 }
-// Check if the slave is already paired with the master.
-// If not, pair the slave with master
+
+/**
+ * Check if the slave is already paired with the master.
+ * If not, pair the slave with master
+ * @return TRUE if successful
+ */
 bool manageSlave() {
     if (slave.channel == CHANNEL) {
         if (DELETEBEFOREPAIR) {
             deletePeer();
         }
-
         Serial.print("Slave Status: ");
         // check if the peer exists
         bool exists = esp_now_is_peer_exist(slave.peer_addr);
@@ -206,11 +229,9 @@ bool manageSlave() {
 
 
 
-uint8_t data = 0;
 
 // send data
 void sendData() {
-    data++;
     const uint8_t *peer_addr = slave.peer_addr;
     Serial.print("Sending: ");
     esp_err_t result = esp_now_send(peer_addr, (uint8_t *) &dataStruct, sizeof(dataStruct));
@@ -256,11 +277,14 @@ void nullAll() {
     audioIterations = 0;
 }
 
+/**
+ * reads audio level from pin specified above
+ */
 void readAudio() {
     for (int i = 0; i < SAMPLES; i++) {
         audioNewTime = micros() - audioOldTime;
         audioOldTime = audioNewTime;
-        vReal[i] = analogRead(34);
+        vReal[i] = analogRead(MICROPHONE_PIN);
         vImag[i] = 0;
         while (micros() < (audioNewTime + sampling_period_us)) {
             return;
@@ -344,13 +368,6 @@ float battery_read()
     //round value by two precision
     voltage = roundf(voltage * 100) / 100;
     return (float)voltage;
-//    Serial.print("voltage: ");
-//    Serial.println(voltage, 2);
-//    output = ((voltage - battery_min) / (battery_max - battery_min)) * 100;
-//    if (output < 100)
-//        return output;
-//    else
-//        return 100.0f;
 }
 
 void prepareDataToSend() {
@@ -423,7 +440,6 @@ void loop() {
     //2.75
     //3.01
     if ((millis() - oldTime) > 15000) {
-//        Serial.println(battery_read());
         oldTime = millis();
         prepareDataToSend();
         nullAll();
