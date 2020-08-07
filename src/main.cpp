@@ -10,6 +10,8 @@
 #include "MPU6050.h"
 
 #include <driver/adc.h>
+#include <esp_wifi.h>
+
 
 MPU6050 mpu;
 int16_t ax, ay, az;
@@ -17,9 +19,9 @@ int16_t gx, gy, gz;
 
 // Global copy of slave
 esp_now_peer_info_t slave;
-#define CHANNEL 3
-#define PRINTSCANRESULTS 0
-#define DELETEBEFOREPAIR 0
+#define CHANNEL 1
+#define PRINTSCANRESULTS 1
+#define DELETEBEFOREPAIR 1
 
 typedef struct DataStruct {
     float Audio;
@@ -60,7 +62,7 @@ int audioIterations;
 
 // Init ESP Now with fallback
 void InitESPNow() {
-    WiFi.disconnect();
+    //WiFi.disconnect();
     if (esp_now_init() == ESP_OK) {
         Serial.println("ESPNow Init Success");
     }
@@ -384,11 +386,21 @@ void setupGyro() {
     Serial.println(mpu.testConnection() ? "Connected" : "Connection failed");
 }
 
+void WiFiReset() {
+    WiFi.persistent(false);
+    WiFi.disconnect();
+    WiFi.mode(WIFI_OFF);
+}
 void setup() {
     Serial.begin(115200);
     setupBMP();
     setupAudio();
     setupGyro();
+
+    uint8_t primaryChan = CHANNEL;
+    wifi_second_chan_t secondChan = WIFI_SECOND_CHAN_NONE;
+    esp_wifi_set_channel(primaryChan, secondChan);
+
 
     //Set device in STA mode to begin with
     WiFi.mode(WIFI_STA);
