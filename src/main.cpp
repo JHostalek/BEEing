@@ -109,12 +109,6 @@ void OnDataRecv(const uint8_t *mac_addr, const uint8_t *data, int data_len) {
     dataStruct.gz = incdata.gz;
     dataStruct.batt = incdata.batt;
     printAll();
-//    Serial.println("");
-//    if (Serial2.available()){
-//        Serial.println("Sending data via serial...");
-//        const char* dp = (const char*) &dataStruct;
-//        for (int i = 0; i < sizeof(dataStruct); i++) Serial2.write(*dp++);
-//    }
 
     Serial.println("-----DONE-----");
     esp_now_unregister_recv_cb();
