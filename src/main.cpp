@@ -4,24 +4,53 @@
 #include <ThingSpeak.h>
 #include <ESP32Ping.h>
 
-unsigned long myChannelNumber = 829059; // vsechno
-unsigned long myChannelNumber2 = 1112090; // batrie
+/**
+ * channel 1
+ * fields  used 8
+ * empty 0
+ */
+unsigned long myChannelNumber = 829059;
+/**
+ * channel 2
+ * only 1 field used - battery value
+ * empty 7
+ */
+unsigned long myChannelNumber2 = 1112090;
+
+//1st channel's api key
 const char *myWriteAPIKey = "4OL312MW06WZDDI3";
+//2nd channel's api key
 const char *myWriteAPIKey2 = "JVZXT5M3X80ZB87D";
 
+/**
+ * HOME WIFI SSID AND PASSWORD!!!
+ */
 const char *ssidStation = "semtamtuk.net";
 const char *passwordStation = "PzgKCTvjC96bZw9xEw9E";
+
+//created instance of WiFi client - used for thingspeak
 WiFiClient client;
-// ACCESS POINT credentials
+
+// ACCESS POINT credentials - aka ESPNow's AP
 const char *ssidAP = ":)";
 const char *passwordAP = "soulknight";
 
+/**
+ * WIFI CHANNEL
+ * at the moment home wifi needs to be set to channel 1
+ * aswell as master's AP used for ESPNow
+ */
+
 int CHANNEL = 1;
 
+//value is used for timing actions
 long long oldTime = millis();
 
-//#define CHANNEL 1
 
+/**
+ * DATA STRUCTURE FOR SENDING DATA
+ * MUST BE SAME AS MASTERS STRUCTURE
+ */
 typedef struct DataStruct {
     float Audio;
     float Tmp1;
@@ -35,8 +64,9 @@ typedef struct DataStruct {
 } DataStruct __attribute__((packed));
 DataStruct dataStruct;
 
-
-// Init ESP Now with fallback
+/**
+ * Init ESP Now with fallback
+ */
 void InitESPNow() {
     if (esp_now_init() == ESP_OK) {
         Serial.println("ESPNow Init Success");
@@ -49,7 +79,9 @@ void InitESPNow() {
     }
 }
 
-// config AP SSID
+/**
+ * config AP SSID
+ */
 void configDeviceAP() {
     bool result = WiFi.softAP(ssidAP, passwordAP, CHANNEL, 0);
     if (!result) {
@@ -59,6 +91,9 @@ void configDeviceAP() {
     }
 }
 
+/**
+ * PRINTS OUT ALL DATA STORED IN dataStructure
+ */
 void printAll() {
     Serial.print("ax = ");
     Serial.print(dataStruct.ax);
@@ -80,7 +115,9 @@ void printAll() {
     Serial.println(dataStruct.batt);
 }
 
-// callback when data is recv from Master
+/**
+ * callback when data is recv from Master
+ */
 void OnDataRecv(const uint8_t *mac_addr, const uint8_t *data, int data_len) {
     char macStr[18];
     snprintf(macStr, sizeof(macStr), "%02x:%02x:%02x:%02x:%02x:%02x",
@@ -99,13 +136,17 @@ void OnDataRecv(const uint8_t *mac_addr, const uint8_t *data, int data_len) {
     dataStruct.gy = incdata.gy;
     dataStruct.gz = incdata.gz;
     dataStruct.batt = incdata.batt;
+    //print incoming data
     printAll();
     Serial.println("-----DONE-----");
 
+    //unregister receiving data until thingspeak upload is successful
     esp_now_unregister_recv_cb();
 }
 
-
+/**
+ * RESETS ALL WIFI DATA
+ */
 void WiFiReset() {
     WiFi.persistent(false);
     WiFi.disconnect();
@@ -113,13 +154,21 @@ void WiFiReset() {
 }
 
 void setup() {
+    //Openingg serial port with PC
     Serial.begin(115200);
     Serial.println("THIS DEVICE IS SERVER - ESPNow");
+
+    //builtin led is used for data transfer signalisation
     pinMode(BUILTIN_LED, OUTPUT);
 
+    //not sure if this piece helps, but it works, so im happy :)
     WiFiReset();
+
+    //AP-ESPNow STA-conects to define ssidStation above
     WiFi.mode(WIFI_AP_STA);
     WiFi.begin(ssidStation, passwordStation, CHANNEL);
+
+    //if connection to wifi fails, restart esp
     long long oldTimeTemp = millis();
     while (WiFi.status() != WL_CONNECTED) {
         if (millis() - oldTimeTemp > 30000) {
@@ -131,10 +180,20 @@ void setup() {
     }
     Serial.println(WiFi.channel());
     Serial.println("Successfully connected");
-    IPAddress ip(8, 8, 8, 8); // The remote ip to ping
-    bool ret = Ping.ping(ip);
-    Serial.println(ret);
 
+    /*
+     * USED FOR TESTING INTERNET CONNECTION
+     * PINGS GOOGLE.COM
+     *
+        IPAddress ip(8, 8, 8, 8); // The remote ip to ping
+        bool ret = Ping.ping(ip);
+        Serial.println(ret);
+     */
+
+
+    /**
+     * ESPNow ESTABILISHING CONNECTION
+     */
     Serial.println("Setting up ESPNow...");
     //Set device in AP mode to begin with
     // configure device AP mode
@@ -147,17 +206,12 @@ void setup() {
     // Once ESPNow is successfully Init, we will register for recv CB to
     // get recv packer info.
 
-
-    ret = Ping.ping(ip);
-    Serial.println(ret);
-    ThingSpeak.begin(client);
-    ret = Ping.ping(ip);
-    Serial.println(ret);
-    digitalWrite(BUILTIN_LED, HIGH);
+    //registed device to receive data from slave
     esp_now_register_recv_cb(OnDataRecv);
 }
 
 void loop() {
+    //once per minute try to send data to thingspeak
     if (millis() - oldTime > 60000) {
         oldTime = millis();
         if (dataStruct.Tmp1 != 0 && dataStruct.Audio != 0) {
