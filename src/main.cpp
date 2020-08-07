@@ -46,6 +46,8 @@ int CHANNEL = 1;
 //value is used for timing actions
 long long oldTime = millis();
 
+bool sendDataToThingspeak = false;
+
 
 /**
  * DATA STRUCTURE FOR SENDING DATA
@@ -142,6 +144,8 @@ void OnDataRecv(const uint8_t *mac_addr, const uint8_t *data, int data_len) {
 
     //unregister receiving data until thingspeak upload is successful
     esp_now_unregister_recv_cb();
+
+    sendDataToThingspeak = true;
 }
 
 /**
@@ -206,14 +210,16 @@ void setup() {
     // Once ESPNow is successfully Init, we will register for recv CB to
     // get recv packer info.
 
+    ThingSpeak.begin(client);
+
     //registed device to receive data from slave
     esp_now_register_recv_cb(OnDataRecv);
 }
 
 void loop() {
     //once per minute try to send data to thingspeak
-    if (millis() - oldTime > 60000) {
-        oldTime = millis();
+    if (sendDataToThingspeak) {
+        //oldTime = millis();
         if (dataStruct.Tmp1 != 0 && dataStruct.Audio != 0) {
             digitalWrite(BUILTIN_LED, HIGH);
             ThingSpeak.writeField(myChannelNumber, 1, dataStruct.Tmp1, myWriteAPIKey);
@@ -261,6 +267,7 @@ void loop() {
             Serial.println(dataStruct.batt);
             delay(60000);
             digitalWrite(BUILTIN_LED, LOW);
+            sendDataToThingspeak = false;
             esp_now_register_recv_cb(OnDataRecv);
         }
 
