@@ -5,9 +5,9 @@
 #include <ES>
 
 typedef struct DataStruct {
-    float Audio;
-    float Tmp1;
-    float batt;
+    float audio;
+    float temperature;
+    float battery;
     int16_t ax;
     int16_t ay;
     int16_t az;
@@ -15,27 +15,27 @@ typedef struct DataStruct {
     int16_t gy;
     int16_t gz;
 } DataStruct;
-DataStruct dataStruct;
+DataStruct data;
 
 void printAll() {
     Serial.print("ax = ");
-    Serial.print(dataStruct.ax);
+    Serial.print(data.ax);
     Serial.print(" | ay = ");
-    Serial.print(dataStruct.ay);
+    Serial.print(data.ay);
     Serial.print(" | az = ");
-    Serial.print(dataStruct.az);
+    Serial.print(data.az);
     Serial.print(" | gx = ");
-    Serial.print(dataStruct.gx);
+    Serial.print(data.gx);
     Serial.print(" | gy = ");
-    Serial.print(dataStruct.gy);
+    Serial.print(data.gy);
     Serial.print(" | gz = ");
-    Serial.print(dataStruct.gz);
+    Serial.print(data.gz);
     Serial.print(" | AUDIO: ");
-    Serial.print(dataStruct.Audio);
+    Serial.print(data.audio);
     Serial.print(" | TEMPERATURE: ");
-    Serial.println(dataStruct.Tmp1);
+    Serial.println(data.temperature);
     Serial.print(" | BATTERY: ");
-    Serial.println(dataStruct.batt);
+    Serial.println(data.battery);
 }
 
 
@@ -66,18 +66,18 @@ void setup() {
 }
 
 void loop() {
-    unsigned long uBufSize = sizeof(dataStruct);
+    unsigned long uBufSize = sizeof(data);
     char pBuffer[uBufSize];
 
-    memcpy(pBuffer, &dataStruct, uBufSize);
+    memcpy(pBuffer, &data, uBufSize);
     for(int i = 0; i<uBufSize;i++) {
         Serial.print(pBuffer[i]);
     }
     Serial.println();
     // if (millis() % 50000 == 0) {
-//        ThingSpeak.writeField(myChannelNumber, 1, dataStruct.Tmp1, myWriteAPIKey);
+//        ThingSpeak.writeField(myChannelNumber, 1, data.temperature, myWriteAPIKey);
 //        Serial.print("send to channel 1 : ");
-//        Serial.println(dataStruct.Tmp1);
+//        Serial.println(data.temperature);
 //    }
 
 }

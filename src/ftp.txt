@@ -19,8 +19,8 @@ char ftp_pass[]   = "skyfox123";
 ESP32_FTPClient ftp (ftp_server,ftp_user,ftp_pass, 34000, 2);
 
 typedef struct DataStruct {
-    float Audio;
-    float Tmp1;
+    float audio;
+    float temperature;
     int16_t AcX;
     int16_t AcY;
     int16_t AcZ;
@@ -29,7 +29,7 @@ typedef struct DataStruct {
     int16_t GyY;
     int16_t GyZ;
 } DataStruct;
-DataStruct dataStruct;
+DataStruct data;
 
 // Init ESP Now with fallback
 void InitESPNow() {
@@ -59,23 +59,23 @@ void configDeviceAP() {
 
 void printIncomingData() {
     Serial.print("AcX = ");
-    Serial.print(dataStruct.AcX);
+    Serial.print(data.AcX);
     Serial.print(" | AcY = ");
-    Serial.print(dataStruct.AcY);
+    Serial.print(data.AcY);
     Serial.print(" | AcZ = ");
-    Serial.print(dataStruct.AcZ);
+    Serial.print(data.AcZ);
     Serial.print(" | Temp = ");
-    Serial.print(dataStruct.Tmp2);
+    Serial.print(data.Tmp2);
     Serial.print(" | GyX = ");
-    Serial.print(dataStruct.GyX);
+    Serial.print(data.GyX);
     Serial.print(" | GyY = ");
-    Serial.print(dataStruct.GyY);
+    Serial.print(data.GyY);
     Serial.print(" | GyZ = ");
-    Serial.print(dataStruct.GyZ);
+    Serial.print(data.GyZ);
     Serial.print(" | AUDIO: ");
-    Serial.print(dataStruct.Audio);
+    Serial.print(data.audio);
     Serial.print(" | TEMPERATURE: ");
-    Serial.println(dataStruct.Tmp1);
+    Serial.println(data.temperature);
 }
 // callback when data is recv from Master
 void OnDataRecv(const uint8_t *mac_addr, const uint8_t *data, int data_len) {
@@ -86,15 +86,15 @@ void OnDataRecv(const uint8_t *mac_addr, const uint8_t *data, int data_len) {
     //Serial.print("Last Packet Recv Data: "); Serial.println(*data);
     DataStruct incdata;
     memcpy(&incdata, data, sizeof(incdata));
-    dataStruct.Audio = incdata.Audio;
-    dataStruct.Tmp1 = incdata.Tmp1;
-    dataStruct.Tmp2 = incdata.Tmp2;
-    dataStruct.AcX = incdata.AcX;
-    dataStruct.AcY = incdata.AcY;
-    dataStruct.AcZ = incdata.AcZ;
-    dataStruct.GyX = incdata.GyX;
-    dataStruct.GyY = incdata.GyY;
-    dataStruct.GyZ = incdata.GyZ;
+    data.audio = incdata.audio;
+    data.temperature = incdata.temperature;
+    data.Tmp2 = incdata.Tmp2;
+    data.AcX = incdata.AcX;
+    data.AcY = incdata.AcY;
+    data.AcZ = incdata.AcZ;
+    data.GyX = incdata.GyX;
+    data.GyY = incdata.GyY;
+    data.GyZ = incdata.GyZ;
     printIncomingData();
     Serial.println("");
 }

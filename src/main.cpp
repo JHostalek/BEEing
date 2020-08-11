@@ -54,9 +54,9 @@ bool sendDataToThingspeak = false;
  * MUST BE SAME AS MASTERS STRUCTURE
  */
 typedef struct DataStruct {
-    float Audio;
-    float Tmp1;
-    float batt;
+    float audio;
+    float temperature;
+    float battery;
     int16_t ax;
     int16_t ay;
     int16_t az;
@@ -64,7 +64,7 @@ typedef struct DataStruct {
     int16_t gy;
     int16_t gz;
 } DataStruct __attribute__((packed));
-DataStruct dataStruct;
+DataStruct data;
 
 /**
  * Init ESP Now with fallback
@@ -98,29 +98,29 @@ void configDeviceAP() {
  */
 void printAll() {
     Serial.print("ax = ");
-    Serial.print(dataStruct.ax);
+    Serial.print(data.ax);
     Serial.print(" | ay = ");
-    Serial.print(dataStruct.ay);
+    Serial.print(data.ay);
     Serial.print(" | az = ");
-    Serial.print(dataStruct.az);
+    Serial.print(data.az);
     Serial.print(" | gx = ");
-    Serial.print(dataStruct.gx);
+    Serial.print(data.gx);
     Serial.print(" | gy = ");
-    Serial.print(dataStruct.gy);
+    Serial.print(data.gy);
     Serial.print(" | gz = ");
-    Serial.print(dataStruct.gz);
+    Serial.print(data.gz);
     Serial.print(" | AUDIO: ");
-    Serial.print(dataStruct.Audio);
+    Serial.print(data.audio);
     Serial.print(" | TEMPERATURE: ");
-    Serial.println(dataStruct.Tmp1);
+    Serial.println(data.temperature);
     Serial.print(" | BATTERY: ");
-    Serial.println(dataStruct.batt);
+    Serial.println(data.battery);
 }
 
 /**
  * callback when data is recv from Master
  */
-void OnDataRecv(const uint8_t *mac_addr, const uint8_t *data, int data_len) {
+void OnDataRecv(const uint8_t *mac_addr, const uint8_t *incomingData, int data_len) {
     char macStr[18];
     snprintf(macStr, sizeof(macStr), "%02x:%02x:%02x:%02x:%02x:%02x",
              mac_addr[0], mac_addr[1], mac_addr[2], mac_addr[3], mac_addr[4], mac_addr[5]);
@@ -128,16 +128,16 @@ void OnDataRecv(const uint8_t *mac_addr, const uint8_t *data, int data_len) {
     Serial.println(macStr);
     //Serial.print("Last Packet Recv Data: "); Serial.println(*data);
     DataStruct incdata;
-    memcpy(&incdata, data, sizeof(incdata));
-    dataStruct.Audio = incdata.Audio;
-    dataStruct.Tmp1 = incdata.Tmp1;
-    dataStruct.ax = incdata.ax;
-    dataStruct.ay = incdata.ay;
-    dataStruct.az = incdata.az;
-    dataStruct.gx = incdata.gx;
-    dataStruct.gy = incdata.gy;
-    dataStruct.gz = incdata.gz;
-    dataStruct.batt = incdata.batt;
+    memcpy(&incdata, incomingData, sizeof(incdata));
+    data.audio = incdata.audio;
+    data.temperature = incdata.temperature;
+    data.ax = incdata.ax;
+    data.ay = incdata.ay;
+    data.az = incdata.az;
+    data.gx = incdata.gx;
+    data.gy = incdata.gy;
+    data.gz = incdata.gz;
+    data.battery = incdata.battery;
     //print incoming data
     printAll();
     Serial.println("-----DONE-----");
@@ -220,51 +220,51 @@ void loop() {
     //once per minute try to send data to thingspeak
     if (sendDataToThingspeak) {
         //oldTime = millis();
-        if (dataStruct.Tmp1 != 0 && dataStruct.Audio != 0) {
+        if (data.temperature != 0 && data.audio != 0) {
             digitalWrite(BUILTIN_LED, HIGH);
-            ThingSpeak.writeField(myChannelNumber, 1, dataStruct.Tmp1, myWriteAPIKey);
+            ThingSpeak.writeField(myChannelNumber, 1, data.temperature, myWriteAPIKey);
             Serial.print("send to ch1 f1: ");
-            Serial.println(dataStruct.Tmp1);
+            Serial.println(data.temperature);
             delay(60000);
             digitalWrite(BUILTIN_LED, LOW);
-            ThingSpeak.writeField(myChannelNumber, 2, dataStruct.Audio, myWriteAPIKey);
+            ThingSpeak.writeField(myChannelNumber, 2, data.audio, myWriteAPIKey);
             Serial.print("send to ch1 f2: ");
-            Serial.println(dataStruct.Audio);
+            Serial.println(data.audio);
             delay(60000);
             digitalWrite(BUILTIN_LED, HIGH);
-            ThingSpeak.writeField(myChannelNumber, 3, dataStruct.ax, myWriteAPIKey);
+            ThingSpeak.writeField(myChannelNumber, 3, data.ax, myWriteAPIKey);
             Serial.print("send to ch1 f3: ");
-            Serial.println(dataStruct.ax);
+            Serial.println(data.ax);
             delay(60000);
             digitalWrite(BUILTIN_LED, LOW);
-            ThingSpeak.writeField(myChannelNumber, 4, dataStruct.ay, myWriteAPIKey);
+            ThingSpeak.writeField(myChannelNumber, 4, data.ay, myWriteAPIKey);
             Serial.print("send to ch1 f4: ");
-            Serial.println(dataStruct.ay);
+            Serial.println(data.ay);
             delay(60000);
             digitalWrite(BUILTIN_LED, HIGH);
-            ThingSpeak.writeField(myChannelNumber, 5, dataStruct.az, myWriteAPIKey);
+            ThingSpeak.writeField(myChannelNumber, 5, data.az, myWriteAPIKey);
             Serial.print("send to ch1 f5: ");
-            Serial.println(dataStruct.az);
+            Serial.println(data.az);
             delay(60000);
             digitalWrite(BUILTIN_LED, LOW);
-            ThingSpeak.writeField(myChannelNumber, 6, dataStruct.gx, myWriteAPIKey);
+            ThingSpeak.writeField(myChannelNumber, 6, data.gx, myWriteAPIKey);
             Serial.print("send to ch1 f6: ");
-            Serial.println(dataStruct.gx);
+            Serial.println(data.gx);
             delay(60000);
             digitalWrite(BUILTIN_LED, HIGH);
-            ThingSpeak.writeField(myChannelNumber, 7, dataStruct.gy, myWriteAPIKey);
+            ThingSpeak.writeField(myChannelNumber, 7, data.gy, myWriteAPIKey);
             Serial.print("send to ch1 f7: ");
-            Serial.println(dataStruct.gy);
+            Serial.println(data.gy);
             delay(60000);
             digitalWrite(BUILTIN_LED, LOW);
-            ThingSpeak.writeField(myChannelNumber, 8, dataStruct.gz, myWriteAPIKey);
+            ThingSpeak.writeField(myChannelNumber, 8, data.gz, myWriteAPIKey);
             Serial.print("send to ch1 f8: ");
-            Serial.println(dataStruct.gz);
+            Serial.println(data.gz);
             delay(60000);
             digitalWrite(BUILTIN_LED, HIGH);
-            ThingSpeak.writeField(myChannelNumber2, 1, dataStruct.batt, myWriteAPIKey2);
+            ThingSpeak.writeField(myChannelNumber2, 1, data.battery, myWriteAPIKey2);
             Serial.print("send to ch1 f8: ");
-            Serial.println(dataStruct.batt);
+            Serial.println(data.battery);
             delay(60000);
             digitalWrite(BUILTIN_LED, LOW);
             sendDataToThingspeak = false;
