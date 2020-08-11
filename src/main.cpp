@@ -24,13 +24,10 @@ esp_now_peer_info_t slave;
 //if true, deletes last used peer
 #define DELETEBEFOREPAIR 1
 
-#define MICROPHONE_PIN 34
-
 #define us_TO_min_FACTOR 60000000 // ONE MINUTE
 #define TIME_TO_SLEEP 1 // in MINUTES
 
 //how many times should values be read - used for approximation
-#define AUDIO_READ_ITERATIONS 1
 #define TEMPERATURE_READ_ITERATIONS 10
 
 //same data structure as masters's - used for ESPNow data transfer
@@ -306,33 +303,30 @@ void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
  * reads audio level from pin specified above
  */
 void readAudio() {
-    for (byte iterations = 0; iterations < AUDIO_READ_ITERATIONS; iterations++) {
-        for (int i = 0; i < SAMPLES; i++) {
-            audioNewTime = micros() - audioOldTime;
-            audioOldTime = audioNewTime;
-            vReal[i] = analogRead(MICROPHONE_PIN);
-            vImag[i] = 0;
-            while (micros() < (audioNewTime + sampling_period_us)) {
-            }
+    for (int i = 0; i < SAMPLES; i++) {
+        audioNewTime = micros() - audioOldTime;
+        audioOldTime = audioNewTime;
+        vReal[i] = analogRead(34);
+        vImag[i] = 0;
+        while (micros() < (audioNewTime + sampling_period_us)) {
+            return;
         }
-        FFT.Windowing(vReal, SAMPLES, FFT_WIN_TYP_HAMMING, FFT_FORWARD);
-        FFT.Compute(vReal, vImag, SAMPLES, FFT_FORWARD);
-        FFT.ComplexToMagnitude(vReal, vImag, SAMPLES);
-
-        for (int i = 2; i < (SAMPLES / 2); i++) {
-            if (vReal[i] > 2000) {
-                //Serial.println((int) vReal[i] / amplitude);  // 125Hz
-                audioPartialSum += (int) vReal[i] / amplitude;
-                audioSamples++;
-            }
-        }
-        data.audio = (float) audioPartialSum / (float) audioSamples;
-        audioSamples = 1;
-        audioPartialSum = 0;
     }
-//    data.audio = audioSum / AUDIO_READ_ITERATIONS;
-//    audioSum = 0;
-
+    FFT.Windowing(vReal, SAMPLES, FFT_WIN_TYP_HAMMING, FFT_FORWARD);
+    FFT.Compute(vReal, vImag, SAMPLES, FFT_FORWARD);
+    FFT.ComplexToMagnitude(vReal, vImag, SAMPLES);
+    int k = 1;
+    int sum = 0;
+    for (int i = 2; i < (SAMPLES / 2); i++) {
+        if (vReal[i] > 2000) {
+            //Serial.println((int) vReal[i] / amplitude);  // 125Hz
+            sum += (int) vReal[i] / amplitude;
+            k++;
+        }
+    }
+    audioSum += (float) sum / (float) k;
+    data.audio = audioSum;
+    audioSum = 0;
 }
 
 
@@ -409,8 +403,21 @@ float readBattery() {
     return (float) voltage;
 }
 
+void measureAudio() {
+    long long oldtime = millis();
+    long long iter = 0;
+    float sum = 0;
+    while (millis() - oldtime < 20000) {
+        iter++;
+        readAudio();
+        sum += data.audio;
+    }
+    data.audio = sum / (float) iter;
+    //Serial.println(data.audio);
+}
+
 void prepareDataToSend() {
-    readAudio();
+    measureAudio();
     readTemperature();
     readGyro();
     readBattery();
@@ -467,34 +474,33 @@ void setup() {
     adc1_config_channel_atten(ADC1_CHANNEL_7, ADC_ATTEN_DB_11); //set reference voltage to internal
 }
 
+
 void loop() {
-    readAudio();
-    Serial.println(data.audio);
-//    prepareDataToSend();
-//    printAll();
-//    ScanForSlave();
-//    // If Slave is found, it would be populate in `slave` variable
-//    // We will check if `slave` is defined and then we proceed further
-//    if (slave.channel == CHANNEL) { // check if slave channel is defined
-//        // `slave` is defined
-//        // Add slave as peer if it has not been added already
-//        bool isPaired = manageSlave();
-//        if (isPaired) {
-//            // pair success or already paired
-//            // Send data to device
-//            sendData();
-//        } else {
-//            // slave pair failed
-//            Serial.println("Slave pair failed!");
-//        }
-//    } else {
-//        // No slave found to process
-//    }
-//
-//    Serial.println("Going to sleep now...");
-//    delay(1000);
-//
-//    Serial.flush();
-//
-//    esp_deep_sleep_start();
+    prepareDataToSend();
+    printAll();
+    ScanForSlave();
+    // If Slave is found, it would be populate in `slave` variable
+    // We will check if `slave` is defined and then we proceed further
+    if (slave.channel == CHANNEL) { // check if slave channel is defined
+        // `slave` is defined
+        // Add slave as peer if it has not been added already
+        bool isPaired = manageSlave();
+        if (isPaired) {
+            // pair success or already paired
+            // Send data to device
+            sendData();
+        } else {
+            // slave pair failed
+            Serial.println("Slave pair failed!");
+        }
+    } else {
+        // No slave found to process
+    }
+
+    Serial.println("Going to sleep now...");
+    delay(1000);
+
+    Serial.flush();
+
+    esp_deep_sleep_start();
 }
