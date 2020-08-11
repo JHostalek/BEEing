@@ -1,4 +1,4 @@
-// Audio level visualizer for Adafruit Circuit Playground: uses the
+// audio level visualizer for Adafruit Circuit Playground: uses the
 // built-in microphone, 10x NeoPixels for display.  Like the FFT example,
 // the real work is done in the Circuit Playground library via the 'mic'
 // object; this code is almost entirely just dressing up the output with
@@ -14,9 +14,9 @@
 // levels are dynamically adjusted based on recent audio history, and
 // the graph is fit into this range.
 #define  FRAMES 8
-uint16_t lvl[FRAMES],           // Audio level for the prior #FRAMES frames
-         avgLo  = 6,            // Audio volume lower end of range
-         avgHi  = 512,          // Audio volume upper end of range
+uint16_t lvl[FRAMES],           // audio level for the prior #FRAMES frames
+         avgLo  = 6,            // audio volume lower end of range
+         avgHi  = 512,          // audio volume upper end of range
          sum    = 256 * FRAMES; // Sum of lvl[] array
 uint8_t  lvlIdx = 0;            // Counter into lvl[] array
 int16_t  peak   = 0;            // Falling dot shows recent max

@@ -286,7 +286,7 @@ extern "C" { // In ffft.S
 void Adafruit_CPlay_Mic::fft(
  uint16_t *spectrum) {               // Spectrum output buffer, uint16_t[32]
   if(spectrum) {
-    int16_t   capBuf[64];            // Audio capture buffer
+    int16_t   capBuf[64];            // audio capture buffer
     complex_t butterfly[64];         // FFT "butterfly" buffer
 
     capture(capBuf, 64);             // Collect mic data into capBuf

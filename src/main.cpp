@@ -13,8 +13,7 @@
  * MPU is GYROSKOPE and ACCELEROMETER device
  */
 MPU6050 mpu;
-int16_t ax, ay, az;
-int16_t gx, gy, gz;
+
 
 // Global copy of slave
 esp_now_peer_info_t slave;
@@ -27,11 +26,18 @@ esp_now_peer_info_t slave;
 
 #define MICROPHONE_PIN 34
 
+#define us_TO_min_FACTOR 60000000 // ONE MINUTE
+#define TIME_TO_SLEEP 1 // in MINUTES
+
+//how many times should values be read - used for approximation
+#define AUDIO_READ_ITERATIONS 1
+#define TEMPERATURE_READ_ITERATIONS 10
+
 //same data structure as masters's - used for ESPNow data transfer
 typedef struct DataStruct {
-    float Audio;
-    float Tmp1;
-    float batt;
+    float audio;
+    float temperature;
+    float battery;
     int16_t ax;
     int16_t ay;
     int16_t az;
@@ -39,7 +45,7 @@ typedef struct DataStruct {
     int16_t gy;
     int16_t gz;
 } DataStruct __attribute__((packed));
-DataStruct dataStruct;
+DataStruct data;
 
 /**
  * TEMPERATURE sensor
@@ -47,7 +53,7 @@ DataStruct dataStruct;
 Adafruit_BMP280 bmp;  // I2C
 
 /**
- * AUDIO SAMPLING VALUES
+ * AUDIO VARIABLES
  */
 arduinoFFT FFT = arduinoFFT();
 #define SAMPLES 512               // Must be a power of 2
@@ -60,18 +66,41 @@ unsigned long microseconds;
 byte peak[] = {0, 0, 0, 0, 0, 0, 0};
 double vReal[SAMPLES];
 double vImag[SAMPLES];
-
-//used for timing
 unsigned long audioNewTime = 0;
 unsigned long audioOldTime = 0;
-
-//used for timing in loop(){}
-unsigned long oldTime = 0;
-unsigned int iterations = 1;
 float audioSum = 0;
-int tempSum = 0;
-int audioIterations;
+int audioSamples = 1;
+int audioPartialSum = 0;
 
+/**
+ * print out wakeup reason (from deepsleep)
+ */
+void print_wakeup_reason() {
+    esp_sleep_wakeup_cause_t wakeup_reason;
+
+    wakeup_reason = esp_sleep_get_wakeup_cause();
+
+    switch (wakeup_reason) {
+        case ESP_SLEEP_WAKEUP_EXT0 :
+            Serial.println("Wakeup caused by external signal using RTC_IO");
+            break;
+        case ESP_SLEEP_WAKEUP_EXT1 :
+            Serial.println("Wakeup caused by external signal using RTC_CNTL");
+            break;
+        case ESP_SLEEP_WAKEUP_TIMER :
+            Serial.println("Wakeup caused by timer");
+            break;
+        case ESP_SLEEP_WAKEUP_TOUCHPAD :
+            Serial.println("Wakeup caused by touchpad");
+            break;
+        case ESP_SLEEP_WAKEUP_ULP :
+            Serial.println("Wakeup caused by ULP program");
+            break;
+        default :
+            Serial.printf("Wakeup was not caused by deep sleep: %d\n", wakeup_reason);
+            break;
+    }
+}
 
 /**
  * Init ESP Now with fallback
@@ -80,8 +109,7 @@ void InitESPNow() {
     //WiFi.disconnect();
     if (esp_now_init() == ESP_OK) {
         Serial.println("ESPNow Init Success");
-    }
-    else {
+    } else {
         Serial.println("ESPNow Init Failed");
         // Retry InitESPNow, add a counte and then restart?
         // InitESPNow();
@@ -103,7 +131,9 @@ void ScanForSlave() {
     if (scanResults == 0) {
         Serial.println("No WiFi devices in AP Mode found");
     } else {
-        Serial.print("Found "); Serial.print(scanResults); Serial.println(" devices ");
+        Serial.print("Found ");
+        Serial.print(scanResults);
+        Serial.println(" devices ");
         for (int i = 0; i < scanResults; ++i) {
             // Print SSID and RSSI for each device found
             String SSID = WiFi.SSID(i);
@@ -124,11 +154,20 @@ void ScanForSlave() {
             if (SSID.indexOf(":)") == 0) {
                 // SSID of interest
                 Serial.println("Found a Slave.");
-                Serial.print(i + 1); Serial.print(": "); Serial.print(SSID); Serial.print(" ["); Serial.print(BSSIDstr); Serial.print("]"); Serial.print(" ("); Serial.print(RSSI); Serial.print(")"); Serial.println("");
+                Serial.print(i + 1);
+                Serial.print(": ");
+                Serial.print(SSID);
+                Serial.print(" [");
+                Serial.print(BSSIDstr);
+                Serial.print("]");
+                Serial.print(" (");
+                Serial.print(RSSI);
+                Serial.print(")");
+                Serial.println("");
                 // Get BSSID => Mac Address of the Slave
                 int mac[6];
-                if ( 6 == sscanf(BSSIDstr.c_str(), "%x:%x:%x:%x:%x:%x",  &mac[0], &mac[1], &mac[2], &mac[3], &mac[4], &mac[5] ) ) {
-                    for (int ii = 0; ii < 6; ++ii ) {
+                if (6 == sscanf(BSSIDstr.c_str(), "%x:%x:%x:%x:%x:%x", &mac[0], &mac[1], &mac[2], &mac[3], &mac[4], &mac[5])) {
+                    for (int ii = 0; ii < 6; ++ii) {
                         slave.peer_addr[ii] = (uint8_t) mac[ii];
                     }
                 }
@@ -153,6 +192,7 @@ void ScanForSlave() {
     // clean up ram
     WiFi.scanDelete();
 }
+
 /**
  * deletes last peer
  */
@@ -187,7 +227,7 @@ bool manageSlave() {
         Serial.print("Slave Status: ");
         // check if the peer exists
         bool exists = esp_now_is_peer_exist(slave.peer_addr);
-        if ( exists) {
+        if (exists) {
             // Slave already paired.
             Serial.println("Already Paired");
             return true;
@@ -226,15 +266,11 @@ bool manageSlave() {
     }
 }
 
-
-
-
-
 // send data
 void sendData() {
     const uint8_t *peer_addr = slave.peer_addr;
     Serial.print("Sending: ");
-    esp_err_t result = esp_now_send(peer_addr, (uint8_t *) &dataStruct, sizeof(dataStruct));
+    esp_err_t result = esp_now_send(peer_addr, (uint8_t *) &data, sizeof(data));
     Serial.print("Send Status: ");
     if (result == ESP_OK) {
         Serial.println("Success");
@@ -265,86 +301,90 @@ void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
     Serial.println(status == ESP_NOW_SEND_SUCCESS ? "Delivery Success" : "Delivery Fail");
 }
 
-void nullAll() {
-    ax = 0;
-    ay = 0;
-    az = 0;
-    gx = 0;
-    gy = 0;
-    gz = 0;
-    audioSum = 0;
-    iterations = 0;
-    audioIterations = 0;
-}
 
 /**
  * reads audio level from pin specified above
  */
 void readAudio() {
-    for (int i = 0; i < SAMPLES; i++) {
-        audioNewTime = micros() - audioOldTime;
-        audioOldTime = audioNewTime;
-        vReal[i] = analogRead(MICROPHONE_PIN);
-        vImag[i] = 0;
-        while (micros() < (audioNewTime + sampling_period_us)) {
-            return;
+    for (byte iterations = 0; iterations < AUDIO_READ_ITERATIONS; iterations++) {
+        for (int i = 0; i < SAMPLES; i++) {
+            audioNewTime = micros() - audioOldTime;
+            audioOldTime = audioNewTime;
+            vReal[i] = analogRead(MICROPHONE_PIN);
+            vImag[i] = 0;
+            while (micros() < (audioNewTime + sampling_period_us)) {
+            }
         }
-    }
-    FFT.Windowing(vReal, SAMPLES, FFT_WIN_TYP_HAMMING, FFT_FORWARD);
-    FFT.Compute(vReal, vImag, SAMPLES, FFT_FORWARD);
-    FFT.ComplexToMagnitude(vReal, vImag, SAMPLES);
-    int k = 1;
-    int sum = 0;
-    for (int i = 2; i < (SAMPLES / 2); i++) {
-        if (vReal[i] > 2000) {
-            //Serial.println((int) vReal[i] / amplitude);  // 125Hz
-            sum += (int) vReal[i] / amplitude;
-            k++;
+        FFT.Windowing(vReal, SAMPLES, FFT_WIN_TYP_HAMMING, FFT_FORWARD);
+        FFT.Compute(vReal, vImag, SAMPLES, FFT_FORWARD);
+        FFT.ComplexToMagnitude(vReal, vImag, SAMPLES);
+
+        for (int i = 2; i < (SAMPLES / 2); i++) {
+            if (vReal[i] > 2000) {
+                //Serial.println((int) vReal[i] / amplitude);  // 125Hz
+                audioPartialSum += (int) vReal[i] / amplitude;
+                audioSamples++;
+            }
         }
+        data.audio = (float) audioPartialSum / (float) audioSamples;
+        audioSamples = 1;
+        audioPartialSum = 0;
     }
-    audioSum += (float) sum / (float) k;
-    audioIterations++;
+//    data.audio = audioSum / AUDIO_READ_ITERATIONS;
+//    audioSum = 0;
+
 }
+
 
 void readTemperature() {
-    tempSum += bmp.readTemperature();
-    Serial.print("DEBUG TEMPERATURE: ");
-    Serial.println(bmp.readTemperature());
+    float tempSum = 0;
+    for (byte i = 0; i < TEMPERATURE_READ_ITERATIONS; i++) {
+        tempSum += bmp.readTemperature();
+        Serial.print("READING TEMPERATURE ");
+        Serial.print(i);
+        Serial.println(" iteration...");
+        delay(1000);
+    }
+    data.temperature = tempSum / TEMPERATURE_READ_ITERATIONS;
 }
 
+/**
+ * reading only immediate value is ok
+ */
 void readGyro() {
-    mpu.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
-    ax = map(ax, -18000, 18000, 63, 0);
-    ay = map(ay, -18000, 18000, 127, 0);
-    az = map(az, -18000, 18000, 0, 180);
-    gx = map(gx, -18000, 18000, 0, 180);
-    gy = map(gy, -18000, 18000, 0, 180);
-    gz = map(gz, -18000, 18000, 0, 180);
+    mpu.getMotion6(&data.ax, &data.ay, &data.az, &data.gx, &data.gy, &data.gz);
+    data.ax = map(data.ax, -18000, 18000, 63, 0);
+    data.ay = map(data.ay, -18000, 18000, 127, 0);
+    data.az = map(data.az, -18000, 18000, 0, 180);
+    data.gx = map(data.gx, -18000, 18000, 0, 180);
+    data.gy = map(data.gy, -18000, 18000, 0, 180);
+    data.gz = map(data.gz, -18000, 18000, 0, 180);
 }
 
 void printAll() {
     Serial.print("ax = ");
-    Serial.print(dataStruct.ax);
+    Serial.print(data.ax);
     Serial.print(" | ay = ");
-    Serial.print(dataStruct.ay);
+    Serial.print(data.ay);
     Serial.print(" | az = ");
-    Serial.print(dataStruct.az);
+    Serial.print(data.az);
     Serial.print(" | gx = ");
-    Serial.print(dataStruct.gx);
+    Serial.print(data.gx);
     Serial.print(" | gy = ");
-    Serial.print(dataStruct.gy);
+    Serial.print(data.gy);
     Serial.print(" | gz = ");
-    Serial.print(dataStruct.gz);
+    Serial.print(data.gz);
     Serial.print(" | AUDIO: ");
-    Serial.print(dataStruct.Audio);
+    Serial.print(data.audio);
     Serial.print(" | TEMPERATURE: ");
-    Serial.println(dataStruct.Tmp1);
+    Serial.println(data.temperature);
     Serial.print(" | BATTERY: ");
-    Serial.println(dataStruct.batt);
+    Serial.println(data.battery);
 }
 
-float battery_read()
-{
+float readBattery() {
+    //2.75
+    //3.01
     //read battery voltage per %
     long sum = 0;                  // sum of samples taken
     float voltage = 0.0;           // calculated voltage
@@ -355,35 +395,26 @@ float battery_read()
     float R1 = 10000.0; // resistance of R1 (100K)
     float R2 = 100000.0;  // resistance of R2 (10K)
 
-    for (int i = 0; i < 500; i++)
-    {
+    for (int i = 0; i < 500; i++) {
         sum += adc1_get_voltage(ADC1_CHANNEL_7);
         delayMicroseconds(1000);
     }
     // calculate the voltage
-    voltage = sum / (float)500;
-    voltage = (voltage * (float)3.0) / (float)4096.0; //for internal 1.1v reference
+    voltage = sum / (float) 500;
+    voltage = (voltage * (float) 3.0) / (float) 4096.0; //for internal 1.1v reference
     // use if added divider circuit
-    voltage = voltage / (R2/(R1+R2));
+    voltage = voltage / (R2 / (R1 + R2));
     //round value by two precision
     voltage = roundf(voltage * 100) / 100;
-    return (float)voltage;
+    return (float) voltage;
 }
 
 void prepareDataToSend() {
-    dataStruct.Audio = audioSum / audioIterations;
-    dataStruct.Tmp1 = bmp.readTemperature();
-    dataStruct.batt = battery_read();
+    readAudio();
+    readTemperature();
     readGyro();
-    dataStruct.ax = ax ;
-    dataStruct.ay = ay ;
-    dataStruct.az = az ;
-    dataStruct.gx = gx ;
-    dataStruct.gy = gy ;
-    dataStruct.gz = gz ;
+    readBattery();
 }
-
-
 
 void setupAudio() {
     sampling_period_us = round(1000000 * (1.0 / SAMPLING_FREQUENCY));
@@ -392,7 +423,8 @@ void setupAudio() {
 void setupBMP() {
     if (!bmp.begin()) {
         Serial.println(F("Could not find a valid BMP280 sensor, check wiring!"));
-        while (1);
+        delay(5000);
+        ESP.restart();
     }
 }
 
@@ -403,13 +435,14 @@ void setupGyro() {
     Serial.println(mpu.testConnection() ? "Connected" : "Connection failed");
 }
 
-void WiFiReset() {
-    WiFi.persistent(false);
-    WiFi.disconnect();
-    WiFi.mode(WIFI_OFF);
-}
 void setup() {
     Serial.begin(115200);
+
+    print_wakeup_reason();
+    esp_sleep_enable_timer_wakeup(TIME_TO_SLEEP * us_TO_min_FACTOR);
+    Serial.println("Setup ESP32 to sleep for every " + String(TIME_TO_SLEEP) +
+                   " Minutes");
+
     setupBMP();
     setupAudio();
     setupGyro();
@@ -435,33 +468,33 @@ void setup() {
 }
 
 void loop() {
-    iterations++;
     readAudio();
-    //2.75
-    //3.01
-    if ((millis() - oldTime) > 15000) {
-        oldTime = millis();
-        prepareDataToSend();
-        nullAll();
-        printAll();
-        ScanForSlave();
-        // If Slave is found, it would be populate in `slave` variable
-        // We will check if `slave` is defined and then we proceed further
-        if (slave.channel == CHANNEL) { // check if slave channel is defined
-            // `slave` is defined
-            // Add slave as peer if it has not been added already
-            bool isPaired = manageSlave();
-            if (isPaired) {
-                // pair success or already paired
-                // Send data to device
-                sendData();
-            } else {
-                // slave pair failed
-                Serial.println("Slave pair failed!");
-            }
-        } else {
-            // No slave found to process
-        }
-
-    }
+    Serial.println(data.audio);
+//    prepareDataToSend();
+//    printAll();
+//    ScanForSlave();
+//    // If Slave is found, it would be populate in `slave` variable
+//    // We will check if `slave` is defined and then we proceed further
+//    if (slave.channel == CHANNEL) { // check if slave channel is defined
+//        // `slave` is defined
+//        // Add slave as peer if it has not been added already
+//        bool isPaired = manageSlave();
+//        if (isPaired) {
+//            // pair success or already paired
+//            // Send data to device
+//            sendData();
+//        } else {
+//            // slave pair failed
+//            Serial.println("Slave pair failed!");
+//        }
+//    } else {
+//        // No slave found to process
+//    }
+//
+//    Serial.println("Going to sleep now...");
+//    delay(1000);
+//
+//    Serial.flush();
+//
+//    esp_deep_sleep_start();
 }
