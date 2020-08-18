@@ -307,6 +307,7 @@ void readAudio() {
         audioNewTime = micros() - audioOldTime;
         audioOldTime = audioNewTime;
         vReal[i] = analogRead(34);
+        //Serial.println(analogRead(34));
         vImag[i] = 0;
         while (micros() < (audioNewTime + sampling_period_us)) {
             return;
@@ -376,7 +377,7 @@ void printAll() {
     Serial.println(data.battery);
 }
 
-float readBattery() {
+void readBattery() {
     //2.75
     //3.01
     //read battery voltage per %
@@ -400,7 +401,7 @@ float readBattery() {
     voltage = voltage / (R2 / (R1 + R2));
     //round value by two precision
     voltage = roundf(voltage * 100) / 100;
-    return (float) voltage;
+    data.battery = (float) voltage;
 }
 
 void measureAudio() {
@@ -411,9 +412,10 @@ void measureAudio() {
         iter++;
         readAudio();
         sum += data.audio;
+        //Serial.println(data.audio);
     }
     data.audio = sum / (float) iter;
-    //Serial.println(data.audio);
+
 }
 
 void prepareDataToSend() {
