@@ -2,20 +2,20 @@
 #include <WiFi.h>
 #include <WiFiClient.h>
 #include <ThingSpeak.h>
-#include <ESP32Ping.h>
+//#include <ESP32Ping.h> - used for internet debug - e.g. for ping google
 
 /**
  * channel 1
  * fields  used 8
  * empty 0
  */
-unsigned long myChannelNumber = 829059;
+const unsigned long myChannelNumber = 829059;
 /**
  * channel 2
  * only 1 field used - battery value
  * empty 7
  */
-unsigned long myChannelNumber2 = 1112090;
+const unsigned long myChannelNumber2 = 1112090;
 
 //1st channel's api key
 const char *myWriteAPIKey = "4OL312MW06WZDDI3";
@@ -25,8 +25,10 @@ const char *myWriteAPIKey2 = "JVZXT5M3X80ZB87D";
 /**
  * HOME WIFI SSID AND PASSWORD!!!
  */
-const char *ssidStation = "semtamtuk.net";
-const char *passwordStation = "PzgKCTvjC96bZw9xEw9E";
+const char *ssidStation = ":(";
+const char *passwordStation = "soulknight";
+//const char *ssidStation = "semtamtuk.net";
+//const char *passwordStation = "PzgKCTvjC96bZw9xEw9E";
 
 //created instance of WiFi client - used for thingspeak
 WiFiClient client;
@@ -41,7 +43,7 @@ const char *passwordAP = "soulknight";
  * aswell as master's AP used for ESPNow
  */
 
-int CHANNEL = 1;
+const int CHANNEL = 1;
 
 //value is used for timing actions
 long long oldTime = millis();
@@ -111,9 +113,9 @@ void printAll() {
     Serial.print(data.gz);
     Serial.print(" | AUDIO: ");
     Serial.print(data.audio);
-    Serial.print(" | TEMPERATURE: ");
+    Serial.print(" | TEMP: ");
     Serial.println(data.temperature);
-    Serial.print(" | BATTERY: ");
+    Serial.print(" | BATT: ");
     Serial.println(data.battery);
 }
 
@@ -121,6 +123,7 @@ void printAll() {
  * callback when data is recv from Master
  */
 void OnDataRecv(const uint8_t *mac_addr, const uint8_t *incomingData, int data_len) {
+    Serial.println("-----RECEIVED-----");
     char macStr[18];
     snprintf(macStr, sizeof(macStr), "%02x:%02x:%02x:%02x:%02x:%02x",
              mac_addr[0], mac_addr[1], mac_addr[2], mac_addr[3], mac_addr[4], mac_addr[5]);
@@ -222,48 +225,25 @@ void loop() {
         //oldTime = millis();
         if (data.temperature != 0 && data.audio != 0) {
             digitalWrite(BUILTIN_LED, HIGH);
-            ThingSpeak.writeField(myChannelNumber, 1, data.temperature, myWriteAPIKey);
-            Serial.print("send to ch1 f1: ");
-            Serial.println(data.temperature);
-            delay(60000);
-            digitalWrite(BUILTIN_LED, LOW);
-            ThingSpeak.writeField(myChannelNumber, 2, data.audio, myWriteAPIKey);
-            Serial.print("send to ch1 f2: ");
-            Serial.println(data.audio);
-            delay(60000);
-            digitalWrite(BUILTIN_LED, HIGH);
-            ThingSpeak.writeField(myChannelNumber, 3, data.ax, myWriteAPIKey);
-            Serial.print("send to ch1 f3: ");
-            Serial.println(data.ax);
-            delay(60000);
-            digitalWrite(BUILTIN_LED, LOW);
-            ThingSpeak.writeField(myChannelNumber, 4, data.ay, myWriteAPIKey);
-            Serial.print("send to ch1 f4: ");
-            Serial.println(data.ay);
-            delay(60000);
-            digitalWrite(BUILTIN_LED, HIGH);
-            ThingSpeak.writeField(myChannelNumber, 5, data.az, myWriteAPIKey);
-            Serial.print("send to ch1 f5: ");
-            Serial.println(data.az);
-            delay(60000);
-            digitalWrite(BUILTIN_LED, LOW);
-            ThingSpeak.writeField(myChannelNumber, 6, data.gx, myWriteAPIKey);
-            Serial.print("send to ch1 f6: ");
-            Serial.println(data.gx);
-            delay(60000);
-            digitalWrite(BUILTIN_LED, HIGH);
-            ThingSpeak.writeField(myChannelNumber, 7, data.gy, myWriteAPIKey);
-            Serial.print("send to ch1 f7: ");
-            Serial.println(data.gy);
-            delay(60000);
-            digitalWrite(BUILTIN_LED, LOW);
-            ThingSpeak.writeField(myChannelNumber, 8, data.gz, myWriteAPIKey);
-            Serial.print("send to ch1 f8: ");
-            Serial.println(data.gz);
-            delay(60000);
-            digitalWrite(BUILTIN_LED, HIGH);
+            Serial.println("Sending data to channel 1 to fields 1-8...");
+            ThingSpeak.setField(1, data.temperature);
+            ThingSpeak.setField(2, data.audio);
+            ThingSpeak.setField(3, data.ax);
+            ThingSpeak.setField(4, data.ay);
+            ThingSpeak.setField(5, data.az);
+            ThingSpeak.setField(6, data.gx);
+            ThingSpeak.setField(7, data.gy);
+            ThingSpeak.setField(8, data.gz);
+            // write to the ThingSpeak channel
+            int x = ThingSpeak.writeFields(myChannelNumber, myWriteAPIKey);
+            if (x == 200) {
+                Serial.println("Channel update successful.");
+            } else {
+                Serial.println("Problem updating channel. HTTP error code " + String(x));
+            }
+
             ThingSpeak.writeField(myChannelNumber2, 1, data.battery, myWriteAPIKey2);
-            Serial.print("send to ch1 f8: ");
+            Serial.println("Sending data to channel 2 to 1st field...");
             Serial.println(data.battery);
             delay(60000);
             digitalWrite(BUILTIN_LED, LOW);
