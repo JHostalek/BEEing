@@ -319,7 +319,7 @@ void readAudio() {
     int k = 1;
     int sum = 0;
     for (int i = 2; i < (SAMPLES / 2); i++) {
-        if (vReal[i] > 2000) {
+        if (vReal[i] > 4000) {
             //Serial.println((int) vReal[i] / amplitude);  // 125Hz
             sum += (int) vReal[i] / amplitude;
             k++;
@@ -478,31 +478,9 @@ void setup() {
 
 
 void loop() {
-    prepareDataToSend();
-    printAll();
-    ScanForSlave();
-    // If Slave is found, it would be populate in `slave` variable
-    // We will check if `slave` is defined and then we proceed further
-    if (slave.channel == CHANNEL) { // check if slave channel is defined
-        // `slave` is defined
-        // Add slave as peer if it has not been added already
-        bool isPaired = manageSlave();
-        if (isPaired) {
-            // pair success or already paired
-            // Send data to device
-            sendData();
-        } else {
-            // slave pair failed
-            Serial.println("Slave pair failed!");
-        }
-    } else {
-        // No slave found to process
-    }
+    //prepareDataToSend();
+    measureAudio();
+    Serial.println(data.audio);
+    //printAll();
 
-    Serial.println("Going to sleep now...");
-    delay(1000);
-
-    Serial.flush();
-
-    esp_deep_sleep_start();
 }
