@@ -1,0 +1,76 @@
+/*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*
+*/
+
+.myprogress {
+    width: 200px;
+    height: 200px;
+    background: none;
+    position: relative;
+}
+
+.myprogress::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 6px solid #eee;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.myprogress>span {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+.myprogress .myprogress-left {
+    left: 0;
+}
+
+.myprogress .myprogress-bar {
+    width: 100%;
+    height: 100%;
+    background: none;
+    border-width: 6px;
+    border-style: solid;
+    position: absolute;
+    top: 0;
+}
+
+.myprogress .myprogress-left .myprogress-bar {
+    left: 100%;
+    border-top-right-radius: 1500px;
+    border-bottom-right-radius: 1500px;
+    border-left: 0;
+    -webkit-transform-origin: center left;
+    transform-origin: center left;
+}
+
+.myprogress .myprogress-right {
+    right: 0;
+}
+
+.myprogress .myprogress-right .myprogress-bar {
+    left: -100%;
+    border-top-left-radius: 1500px;
+    border-bottom-left-radius: 1500px;
+    border-right: 0;
+    -webkit-transform-origin: center right;
+    transform-origin: center right;
+}
+
+.myprogress .myprogress-value {
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
