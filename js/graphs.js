@@ -47,9 +47,9 @@ async function checkTimeMode() {
     } else if ($("#week").is(":checked")) {
         numOfDays = 7;
     } else if ($("#month").is(":checked")) {
-        numOfDays = 31;
+        numOfDays = 30;
     } else if ($("#days").is(":checked")) {
-        if (!(document.getElementById("daysInput").value).isNaN) {
+        if (!document.getElementById("daysInput").value.isNaN) {
             numOfDays = document.getElementById("daysInput").value;
         } else {
             document.getElementById("daysInput").value = 10;
@@ -73,7 +73,7 @@ async function getApiBatt(days) {
     yAxeBatt = [];
     xAxeBattFull = [];
     let api_url =
-        "https://api.thingspeak.com/channels/1112090/fields/1.json?api_key=JVM954R6BIE3P1PE&days=" +
+        "https://api.thingspeak.com/channels/1112090/fields/1.json?api_key=JVM954R6BIE3P1PE&results=" +
         String(days) +
         "&timezone=Europe%2FPrague";
     let data = await fetch(api_url);
@@ -159,6 +159,7 @@ async function getApiAccX(days) {
         }
     }
 }
+
 async function getApiAccY(days) {
     xAxeAccY = [];
     yAxeAccY = [];
@@ -181,6 +182,7 @@ async function getApiAccY(days) {
         }
     }
 }
+
 async function getApiAccZ(days) {
     xAxeAccZ = [];
     yAxeAccZ = [];
@@ -203,6 +205,7 @@ async function getApiAccZ(days) {
         }
     }
 }
+
 async function getApiGyX(days) {
     xAxeGyX = [];
     yAxeGyX = [];
@@ -271,11 +274,13 @@ async function getApiGyZ(days) {
         }
     }
 }
-
 async function chartBatt() {
     await getApiBatt(numOfDays);
-    var ctx1 = document.getElementById("BATT");
-    var myLineChart1 = new Chart(ctx1, {
+    if (window.chart1 && window.chart1 !== null) {
+        window.chart1.destroy();
+    }
+    var ctx1 = document.getElementById("BATT").getContext('2d');
+    window.chart1 = new Chart(ctx1, {
         type: "line",
         data: {
             labels: xAxeBatt,
@@ -369,17 +374,26 @@ async function chartBatt() {
                     label: function(tooltipItem, chart) {
                         var datasetLabel =
                             chart.datasets[tooltipItem.datasetIndex].label || "";
-                        return datasetLabel + ": " + parseFloat(tooltipItem.yLabel) + " V ";
+                        return (
+                            datasetLabel + ": " + parseFloat(tooltipItem.yLabel) + " V "
+                        );
                     },
                 },
             },
         },
     });
 }
+
+
+
 async function chartTemp() {
     await getApiTemp(numOfDays);
-    var ctx2 = document.getElementById("TEMP");
-    var myLineChart2 = new Chart(ctx2, {
+
+    if (window.chart2 && window.chart2 !== null) {
+        window.chart2.destroy();
+    }
+    var ctx2 = document.getElementById("TEMP").getContext('2d');
+    window.chart2 = new Chart(ctx2, {
         type: "line",
         data: {
             labels: xAxeTemp,
@@ -472,7 +486,9 @@ async function chartTemp() {
                     label: function(tooltipItem, chart) {
                         var datasetLabel =
                             chart.datasets[tooltipItem.datasetIndex].label || "";
-                        return datasetLabel + ": " + parseFloat(tooltipItem.yLabel) + " °C";
+                        return (
+                            datasetLabel + ": " + parseFloat(tooltipItem.yLabel) + " °C"
+                        );
                     },
                 },
             },
@@ -480,10 +496,14 @@ async function chartTemp() {
     });
 }
 
+
 async function chartAudio() {
     await getApiAudio(numOfDays);
-    var ctx3 = document.getElementById("AUDIO");
-    var myLineChart3 = new Chart(ctx3, {
+    if (window.chart3 && window.chart3 !== null) {
+        window.chart3.destroy();
+    }
+    var ctx3 = document.getElementById("AUDIO").getContext('2d');
+    window.chart3 = new Chart(ctx3, {
         type: "line",
         data: {
             labels: xAxeAudio,
@@ -589,8 +609,11 @@ async function chartAudio() {
 
 async function chartAccX() {
     await getApiAccX(numOfDays);
-    var ctx4 = document.getElementById("ACCX");
-    var myLineChart4 = new Chart(ctx4, {
+    if (window.chart4 && window.chart4 !== null) {
+        window.chart4.destroy();
+    }
+    var ctx4 = document.getElementById("ACCX").getContext('2d');
+    window.chart4 = new Chart(ctx4, {
         type: "line",
         data: {
             labels: xAxeAccX,
@@ -697,8 +720,11 @@ async function chartAccX() {
 
 async function chartAccY() {
     await getApiAccY(numOfDays);
-    var ctx5 = document.getElementById("ACCY");
-    var myLineChart5 = new Chart(ctx5, {
+    if (window.chart5 && window.chart5 !== null) {
+        window.chart5.destroy();
+    }
+    var ctx5 = document.getElementById("ACCY").getContext('2d');
+    window.chart5 = new Chart(ctx5, {
         type: "line",
         data: {
             labels: xAxeAccY,
@@ -805,8 +831,11 @@ async function chartAccY() {
 
 async function chartAccZ() {
     await getApiAccZ(numOfDays);
-    var ctx6 = document.getElementById("ACCZ");
-    var myLineChart6 = new Chart(ctx6, {
+    if (window.chart6 && window.chart6 !== null) {
+        window.chart6.destroy();
+    }
+    var ctx6 = document.getElementById("ACCZ").getContext('2d');
+    window.chart6 = new Chart(ctx6, {
         type: "line",
         data: {
             labels: xAxeAccZ,
@@ -913,8 +942,11 @@ async function chartAccZ() {
 
 async function chartGyX() {
     await getApiGyX(numOfDays);
-    var ctx7 = document.getElementById("GYX");
-    var myLineChart7 = new Chart(ctx7, {
+    if (window.chart7 && window.chart7 !== null) {
+        window.chart7.destroy();
+    }
+    var ctx7 = document.getElementById("GYX").getContext('2d');
+    window.chart7 = new Chart(ctx7, {
         type: "line",
         data: {
             labels: xAxeGyX,
@@ -1018,10 +1050,14 @@ async function chartGyX() {
         },
     });
 }
+
 async function chartGyY() {
     await getApiGyY(numOfDays);
-    var ctx8 = document.getElementById("GYY");
-    var myLineChart8 = new Chart(ctx8, {
+    if (window.chart8 && window.chart8 !== null) {
+        window.chart8.destroy();
+    }
+    var ctx8 = document.getElementById("GYY").getContext('2d');
+    window.chart8 = new Chart(ctx8, {
         type: "line",
         data: {
             labels: xAxeGyY,
@@ -1128,8 +1164,11 @@ async function chartGyY() {
 
 async function chartGyZ() {
     await getApiGyZ(numOfDays);
-    var ctx9 = document.getElementById("GYZ");
-    var myLineChart9 = new Chart(ctx9, {
+    if (window.chart9 && window.chart9 !== null) {
+        window.chart9.destroy();
+    }
+    var ctx9 = document.getElementById("GYZ").getContext('2d');
+    window.chart9 = new Chart(ctx9, {
         type: "line",
         data: {
             labels: xAxeGyZ,

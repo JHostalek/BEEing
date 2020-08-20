@@ -24,7 +24,7 @@
     left: 0;
 }
 
-.myprogress>span {
+.myprogress > span {
     width: 50%;
     height: 100%;
     overflow: hidden;

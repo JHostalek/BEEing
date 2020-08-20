@@ -64,7 +64,7 @@ async function updateBattery() {
         elem.style.width = voltage + "%";
         updateColor();
     } else {
-        voltage = map(voltage, 2.32, 3, 0, 100);
+        voltage = map(voltage, 2.32, 3.07, 0, 100);
         document.getElementById("batteryLevel").innerHTML = Math.round(voltage) + "%";
         //console.log(voltage);
         elem.style.width = voltage + "%";
@@ -74,6 +74,7 @@ async function updateBattery() {
 }
 
 var text = String();
+
 async function updatePosition() {
     let xAxeAccX = [];
     let yAxeAccX = [];
